@@ -46,6 +46,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Σχετικά με εμάς</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Θέματα</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                <li class="nav-item"><button id = "username" class="btn btn-primary rounded p-3 m-3" >Username</button></li>
             </ul>
         </div>
     </div>
@@ -313,5 +314,13 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+<script>
+$("#username").html(getItem("username"));
+
+    function getItem(name){
+        return localStorage.getItem(name);
+    }
+
+</script>
 </body>
 </html>
