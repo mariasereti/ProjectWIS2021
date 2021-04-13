@@ -600,6 +600,13 @@ pre code {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
+.col-gk{
+  position: relative;
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-top: 0;
+}
 
 .col {
   flex-basis: 0;
@@ -1229,6 +1236,13 @@ pre code {
     margin-left: 91.6666666667%;
   }
 }
+@media (min-width: 992px){
+  .col-gk {
+	max-height: 100%;
+	max-width: 50%;
+  }
+}
+  
 @media (min-width: 992px) {
   .col-lg {
     flex-basis: 0;
@@ -4057,7 +4071,7 @@ input[type=button].btn-block {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: inherit;
   white-space: nowrap;
 }
@@ -9932,6 +9946,16 @@ button.bg-black:focus {
   color: #fff !important;
 }
 
+.text-gk {
+  color: #600205;
+  opacity: 0.7;
+  text-shadow:
+   -1px -1px 0 #F9D6D7,  
+    1px -1px 0 #F9D6D7,
+    -1px 1px 0 #F9D6D7,
+     1px 1px 0 #F9D6D7;
+}
+
 .text-primary {
   color: #64a19d !important;
 }
@@ -10186,10 +10210,14 @@ body {
     padding: 0.5rem 0;
     color: rgba(255, 255, 255, 0.5);
   }
+  #mainNav .navbar-brand:hover {
+    padding: 0.5rem 0;
+    color: rgba(150, 150, 150, 0.7);
+  }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(240, 240, 240, 0.5);
   }
   #mainNav .nav-link:hover {
     color: rgba(255, 255, 255, 0.75);
@@ -10470,7 +10498,7 @@ body {
 }
 
 #hero .btn-get-started:hover {
-  background: #000000;
+  background: #808080;
   color: #fff;
   text-decoration: none;
 }
