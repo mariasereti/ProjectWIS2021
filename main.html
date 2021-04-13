@@ -29,6 +29,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                <li class="nav-item"><button id = "username" class="btn btn-primary rounded p-3 m-3" >Username</button></li>
             </ul>
         </div>
     </div>
@@ -170,5 +171,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+
+<script>
+$("#username").html(getItem("username"));
+
+    function getItem(name){
+        return localStorage.getItem(name);
+    }
+
+</script>
 </body>
 </html>
