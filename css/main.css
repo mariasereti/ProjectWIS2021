@@ -10553,7 +10553,7 @@ body {
 /*--------------------------------------------------------------
 # Dropdown Section
 --------------------------------------------------------------*/
-ul {
+/*ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -10579,17 +10579,6 @@ li a:hover, .dropdown:hover .dropbtn {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/*.navbar-light .li a.active {
-  color: rgba(0, 0, 0, 0.9);
-}
-
-.navbar-light .li a:{
-	color: rgba(0, 0, 0, 0.5);
-}
-
-.navbar-dark .li a:hover, .dropdown:hover .dropbtn {
-  color: rgba(255, 255, 255, 0.75);
-}*/
 
 li.dropdown {
   display: inline-block;
@@ -10616,4 +10605,4 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+}*/
