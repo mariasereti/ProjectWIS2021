@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!--webpage icon-->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 
 </head>
 <body>
@@ -33,26 +33,36 @@
                             <div class="w-100">
                                 <h3 class="mb-4 p-3 text-center">Είσοδος Χρήστη</h3>
                             </div>
-<!--                            <div class="w-100">-->
-<!--                                <p class="social-media d-flex justify-content-end">-->
-<!--                                    <a href="#"-->
-<!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
-<!--                                            class="fa fa-facebook"></span></a>-->
-<!--                                    <a href="#"-->
-<!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
-<!--                                            class="fa fa-twitter"></span></a>-->
-<!--                                </p>-->
-<!--                            </div>-->
+                            <!--                            <div class="w-100">-->
+                            <!--                                <p class="social-media d-flex justify-content-end">-->
+                            <!--                                    <a href="#"-->
+                            <!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
+                            <!--                                            class="fa fa-facebook"></span></a>-->
+                            <!--                                    <a href="#"-->
+                            <!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
+                            <!--                                            class="fa fa-twitter"></span></a>-->
+                            <!--                                </p>-->
+                            <!--                            </div>-->
                         </div>
                         <form action="#" class="signin-form">
                             <div class="form-group mb-3">
-                                <label class="label" for="name">ονομα</label>
-                                <input id="input_username" type="text" class="form-control" placeholder="Όνομα"
+                                <label class="label" for="email">email</label>
+                                <input id="input_email" type="text" class="form-control" placeholder="Email"
                                        required>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">κωδικος</label>
                                 <input id="input_password" type="password" class="form-control" placeholder="Κωδικός"
+                                       required>
+                            </div>
+                            <div class="form-group mb-3" id="form_name" hidden>
+                                <label class="label" for="name">Όνομα</label>
+                                <input id="input_name" type="text" class="form-control" placeholder="Όνομα"
+                                       required>
+                            </div>
+                            <div class="form-group mb-3" id="form_surname" hidden>
+                                <label class="label" for="surname">Επίθετο</label>
+                                <input id="input_surname" type="text" class="form-control" placeholder="Επίθετο"
                                        required>
                             </div>
                             <div class="form-group">
@@ -72,7 +82,10 @@
                                 </div>
                             </div>
                         </form>
-                        <p class="text-center">Δεν είστε μέλος; <a data-toggle="tab" href="#signup">Εγγραφή</a></p>
+                      <!--  <p class="text-center">Δεν είστε μέλος; <a data-toggle="tab" href="#signup">Εγγραφή</a></p> -->
+                        <p class="text-center" id="p_signUP">Δεν είστε μέλος; <button type="reset" class="form-control btn btn-primary rounded submit px-3"
+                                                                        onclick="signUp()">Εγγραφή
+                        </button></p>
                     </div>
                 </div>
             </div>
@@ -81,36 +94,114 @@
 </section>
 
 <script>
-	function signIn() {
 
-		if (!(checkField("#input_username") && checkField("#input_password"))) {
+    var signIN = true;
 
-			return;
-		}
+    function signIn() {
+        if(signIN){
+            if (!(checkField("#input_email") && checkField("#input_password"))) {
 
-		createItem("username", $("#input_username").val());
-		window.location.href = "./main.html"
-	}
+                return;
+            }
+            const url = "http://localhost:3000/signin"
+            const data = new URLSearchParams();
+
+            data.append("email", $("#input_email").val());
+            data.append("password", "78837582a");
+
+            console.log(data);
+
+            const otherParam = {
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: data,
+                method: "POST"
+            }
+
+            //window.alert(otherParam.toString());
+            fetch(url, otherParam)
+                .then(data => {
+                    window.alert(data.json())
+                })
+                .then(res => {
+                    window.alert(res)
+                })
+                .catch(error => {
+                    window.alert("Error nigga: " + error.message)
+                })
+
+        }else{
+            if (!(checkField("#input_email") && checkField("#input_password")) && checkField("#input_name") && checkField("#input_surname")) {
+
+                return;
+            }
+
+            const url = "http://localhost:3000/signup"
+            const data = new URLSearchParams();
+
+            data.append("email", $("#input_email").val());
+            data.append("password", $("#input_password").val());
+            data.append("name",$("#input_name").val());
+            data.append("surname",$("#input_surname").val());
+
+            const otherParam = {
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: data,
+                method: "POST"
+            }
+
+            fetch(url, otherParam)
+                .then(data => {
+                    window.alert(data.json())
+                })
+                .then(res => {
+                    window.alert(res)
+                })
+                .catch(error => {
+                    window.alert("Error nigga: " + error.message)
+                })
+        }
+
+       // window.location.href = "./main.html"
+    }
+
+    function signUp(){
+       // window.alert("Sign up");
+
+        var formName = document.getElementById("form_name");
+        var formSurname = document.getElementById("form_surname");
+
+        var pSignUP = document.getElementById("p_signUP");
+
+        formName.hidden = false;
+        formSurname.hidden = false;
+        pSignUP.hidden = true;
+
+        signIN = false;
+    }
 
 
-	function checkField(fld){
-		var isRequired = $(fld).prop('required');
-		var isValid = $(fld).prop("validity").valid;
-		var isEmpty = $(fld).val() == "";
-		$(fld).removeClass("is-valid").removeClass("is-invalid");
-		if (isValid) {
-			if (!isEmpty)
-				$(fld).addClass("is-valid");
-			return true;
-		} else {
-			$(fld).addClass("is-invalid");
-			return false;
-		}
-	}
+    function checkField(fld) {
+        var isRequired = $(fld).prop('required');
+        var isValid = $(fld).prop("validity").valid;
+        var isEmpty = $(fld).val() == "";
+        $(fld).removeClass("is-valid").removeClass("is-invalid");
+        if (isValid) {
+            if (!isEmpty)
+                $(fld).addClass("is-valid");
+            return true;
+        } else {
+            $(fld).addClass("is-invalid");
+            return false;
+        }
+    }
 
-	function createItem(name,value) {
-		localStorage.setItem(name,value);
-	}
+    function createItem(name, value) {
+        localStorage.setItem(name, value);
+    }
 
 
 </script>
