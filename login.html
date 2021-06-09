@@ -106,6 +106,8 @@
             const url = "https://humanrightsapplication.herokuapp.com/signin"
             const data = new URLSearchParams();
 
+            var email = $("#input_email").val();
+
             data.append("email", $("#input_email").val());
             data.append("password", $("#input_password").val());
 
@@ -119,39 +121,18 @@
                 method: "POST"
             }
 
-            //window.alert(otherParam.toString());
-            /*
-            fetch(url, otherParam)
-                .then(data => {
-                    window.alert(data.json())
-                })
-                .then(res => {
-                    window.alert(res)
-                })
-                .catch(error => {
-                    window.alert("Error nigga: " + error.message)
-                })
-
-*/
-
-
             postData(url,otherParam)
-                .then(data=> {console.log(data)})
+                .then(data=> {
+                    //User has successfully signed in
+                    if(data.code == 1){
 
-            /*
-            var response =  fetch(url,otherParam)
-                .then(res =>{
-                    if(res.ok){
-                        var data = res.json();
-                        console.log(data);
-                        console.log(data["response"]);
-
-                        return data;
+                        createItem("name",data.username);
+                        createItem("userID",data.userID);
+                        window.location.href = "./main.html"
+                    }else{
+                        window.alert("Incorrect credentials for: " +email );
                     }
-                    return res.text().then(text => {throw new Error(text)})
-                }).catch(error => {
-                console.error(error);
-            })*/
+                })
 
         }else{
             if (!(checkField("#input_email") && checkField("#input_password")) && checkField("#input_name") && checkField("#input_surname")) {
@@ -161,6 +142,7 @@
 
             const url = "https://humanrightsapplication.herokuapp.com/signup"
             const data = new URLSearchParams();
+
 
             data.append("email", $("#input_email").val());
             data.append("password", $("#input_password").val());
@@ -176,37 +158,20 @@
             }
 
             postData(url,otherParam)
-            .then(data=> {console.log(data.response)});
-            /*
-            fetch(url,otherParam)
-            .then(res =>{
-                if(res.ok){
-                    var data = res.json();
-                    console.log("Nigga m");
-                    console.log(data.response);
-                }
-                return res.text().then(text => {throw new Error(text)})
-            }).catch(error => {
-                console.error(error);
-            })
+            .then(data=> {
+            if(data.code == 1){
+                createItem("name",data.username);
+                createItem("userID",data.userID);
+                window.location.href = "./main.html"
+            }else{
+                window.alert(data.response);
+            }
+            });
 
-            */
-/*
-            fetch(url, otherParam)
-                .then(data => {
-                    window.alert(data.json())
-                })
-                .then(res => {
-                    window.alert(res)
-                })
-                .catch(error => {
-                    window.alert("Error nigga: " + error.message)
-                })
-                */
 
         }
 
-       // window.location.href = "./main.html"
+
     }
 
     function signUp(){
