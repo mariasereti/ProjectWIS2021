@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>user profile bio graph and total sales - Bootdey.com</title>
+    <title>user profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
@@ -18,26 +18,23 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+
     <div class="container bootstrap snippets bootdey">
       <div class="row">
+        <!-- Avatar Navigation-->
         <div class="profile-nav col-md-3">
           <div class="panel">
             <div class="user-heading round">
               <a href="#">
-                <img
-                  src="images/avatar.png"
-                  alt=""
-                />
+                <img src="images/avatar.png" alt="" />
               </a>
-              <h1>Camila Smith</h1>
-              <p>deydey@theEmail.com</p>
+              <h1 id="fullName">Name Sirname</h1>
+              <p id="email2">yourEmail@mailService.com</p>
             </div>
 
             <ul class="nav nav-pills nav-stacked">
               <li>
-                <a href="main.html">
-                  <i class="fa fa-home"></i> Αρχική
-                </a>
+                <a href="main.html"> <i class="fa fa-home"></i> Αρχική </a>
               </li>
               <li class="active">
                 <a href="#pData"> <i class="fa fa-user"></i> Προφίλ</a>
@@ -48,7 +45,10 @@
             </ul>
           </div>
         </div>
+
+        <!-- Profile -->
         <div class="profile-info col-md-9">
+          <!-- New Article -->
           <div class="panel">
             <form>
               <textarea
@@ -61,35 +61,43 @@
               <button class="btn btn-warning pull-right">Post</button>
               <ul class="nav nav-pills">
                 <form>
-                  <textarea
-                    placeholder="Title"
-                    rows=1
-                    class="input-sm col-xs-3 p-text-area"
-                  ></textarea>
+                  <div>
+                    <textarea
+                      placeholder="Title"
+                      rows="1"
+                      class="input-sm col-xs-3 p-text-area"
+                    ></textarea>
+                  </div>
                 </form>
               </ul>
-
             </footer>
           </div>
+
+          <!-- Personal Info-->
           <div class="panel">
             <div class="bio-graph-heading" id="pData">Προσωπικά Στοιχεία</div>
             <div class="panel-body bio-graph-info">
               <div class="row">
                 <div class="bio-row">
-                  <p><span>Όνομα </span>: Camila</p>
+                  <p><span>Όνομα:</span> <span id="name">Camila</span></p>
                 </div>
                 <div class="bio-row">
-                  <p><span>Επίθετο </span>: Smith</p>
+                  <p><span>Επίθετο: </span> <span id="sirname">Smith</span></p>
                 </div>
+                <!--<div class="bio-row">
+                  <p><span>Χώρα:</span> <span id="country"> Unknown</span></p>
+                </div>-->
                 <div class="bio-row">
-                  <p><span>Χώρα</span>: Australia</p>
-                </div>
-                <div class="bio-row">
-                  <p><span>Email </span>: jsmith@flatlab.com</p>
+                  <p>
+                    <span>Email: </span
+                    ><span id="email">jsmith@flatlab.com</span>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Previous Articles-->
           <div>
             <div class="row">
               <div class="col-md-6">
@@ -134,7 +142,8 @@
                     <div class="bio-desk">
                       <article>
                         <p>
-                          Article 1 mpla mpla mpla mpla mpla gia na doume poses seires tha katevei ayto to keimeno
+                          Article 1 mpla mpla mpla mpla mpla gia na doume poses
+                          seires tha katevei ayto to keimeno
                         </p>
                       </article>
                     </div>
@@ -183,10 +192,8 @@
                     <div class="bio-desk">
                       <article>
                         <p>
-                          Article 2
-                          row 2
-                          row 3
-                          to enter den pianei, ayto einai grammeno se 4 seires, alla de mas noiazei
+                          Article 2 row 2 row 3 to enter den pianei, ayto einai
+                          grammeno se 4 seires, alla de mas noiazei
                         </p>
                       </article>
                     </div>
@@ -235,9 +242,9 @@
                     <div class="bio-desk">
                       <article>
                         <p>
-                          Article 3 mpla mpla mpla mpla mpla
-                          row 2 mpla mpla mpla mpla mpla mpla
-                          row 3 mpla mpla mpla mpla mpla mpla
+                          Article 3 mpla mpla mpla mpla mpla row 2 mpla mpla
+                          mpla mpla mpla mpla row 3 mpla mpla mpla mpla mpla
+                          mpla
                         </p>
                       </article>
                     </div>
@@ -286,7 +293,12 @@
                     <div class="bio-desk">
                       <article>
                         <p>
-                          Des pou tha exoun mono 4 arthra na grapsoun... an theloun parapanw as mas plhrwsoun gia premium account, apo kapou prepei na vgoun kai ta eksoda ths mko. Kai as valoume kai ligh extra prospatheia na doume ti ginetai otan to arthro ksefeygei apo ta oria pou exei to orthogwnio parallhlogrammo.
+                          Des pou tha exoun mono 4 arthra na grapsoun... an
+                          theloun parapanw as mas plhrwsoun gia premium account,
+                          apo kapou prepei na vgoun kai ta eksoda ths mko. Kai
+                          as valoume kai ligh extra prospatheia na doume ti
+                          ginetai otan to arthro ksefeygei apo ta oria pou exei
+                          to orthogwnio parallhlogrammo.
                         </p>
                       </article>
                     </div>
@@ -301,5 +313,20 @@
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript"></script>
+
+    <!--kimon-->
+    <script>
+      $("#name").html(getItem("name"));
+      $("#sirname").html(getItem("sirname"));
+      var fullName = getItem("name") + " " + getItem("sirname");
+      $("#fullName").html(fullName);
+
+      $("#email").html(getItem("email"));
+      $("#email2").html(getItem("email"));
+
+      function getItem(name) {
+        return localStorage.getItem(name);
+      }
+    </script>
   </body>
 </html>
