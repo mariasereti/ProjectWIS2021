@@ -13,6 +13,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .profile-nav,
@@ -428,11 +432,10 @@ ul.summary-list > li:last-child {
     rgba(255, 255, 255, 0.3),
     rgba(150, 150, 150, 0.7)
   );
-  color:black;
-   
+  color: black;
 }
 
-::placeholder{
+::placeholder {
   color: rgba(150, 150, 150, 1);
 }
 
@@ -441,10 +444,8 @@ ul.summary-list > li:last-child {
     to right,
     rgba(150, 150, 150, 0.3),
     rgba(150, 150, 150, 0.7)
-  )
-};
-
- 
+  );
+}
 
 .panel-body {
   background: linear-gradient(
@@ -459,7 +460,5 @@ a {
     to right,
     rgba(150, 150, 150, 0.3),
     rgba(150, 150, 150, 0.7)
- 
   ) !important;
 }
-

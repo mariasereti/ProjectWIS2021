@@ -1,171 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>user profile</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="css/newsFeed.css" rel="stylesheet" />
-    <link href="css/profile.css" rel="stylesheet" />
-  </head>
-  <body>
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
 
-    <div class="container bootstrap snippets bootdey">
-      <div class="row">
-        <!-- Avatar Navigation-->
-        <div class="profile-nav col-md-3">
-          <div class="panel">
-            <div class="user-heading round">
-              <a href="#">
-                <img src="images/avatar.png" alt="" />
-              </a>
-              <h1 id="fullName">Name Sirname</h1>
-              <p id="email2">yourEmail@mailService.com</p>
-            </div>
+<head>
+  <meta charset="utf-8" />
+  <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+  <!--  All snippets are MIT license http://bootdey.com/license -->
+  <title>user profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/newsFeed.css" rel="stylesheet" />
+  <link href="css/profile.css" rel="stylesheet" />
+</head>
 
-            <ul class="nav nav-pills nav-stacked">
-              <li>
-                <a href="main.html"> <i class="fa fa-home"></i> Αρχική </a>
-              </li>
-              <li class="active">
-                <a href="#pData"> <i class="fa fa-user"></i> Προφίλ</a>
-              </li>
-              <li>
-                <a href="#"> <i class="fa fa-edit"></i> Επεξεργασία Προφίλ</a>
-              </li>
+<body>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <div class="container bootstrap snippets bootdey">
+    <div class="row">
+      <!-- Avatar Navigation-->
+      <div class="profile-nav col-md-3">
+        <div class="panel">
+          <div class="user-heading round">
+            <a href="#">
+              <img src="images/avatar.png" alt="" />
+            </a>
+            <h1 id="fullName">Name Surname</h1>
+            <p id="email2">yourEmail@mailService.com</p>
+          </div>
+
+          <ul class="nav nav-pills nav-stacked">
+            <li>
+              <a href="main.html"> <i class="fa fa-home"></i> Αρχική </a>
+            </li>
+            <li class="active">
+              <a href="#pData"> <i class="fa fa-user"></i> Προφίλ</a>
+            </li>
+            <li>
+              <a href="#"> <i class="fa fa-edit"></i> Επεξεργασία Προφίλ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Profile -->
+      <div class="profile-info col-md-9">
+        <!-- New Article -->
+        <div class="panel">
+          <!-- <form> -->
+          <textarea id="input_text" placeholder="What's your story?" rows="3"
+            class="form-control input-lg p-text-area"></textarea>
+          <!-- </form> -->
+          <footer class="panel-footer">
+            <button class="btn btn-warning pull-right" onClick="createArticle()">Post</button>
+            <ul class="nav nav-pills">
+              <!-- <form> -->
+              <div>
+                <textarea id="input_title" placeholder="Title" rows="1"
+                  class="input-sm col-xs-3 p-text-area"></textarea>
+              </div>
+              <!-- </form> -->
             </ul>
+          </footer>
+          <div class="alert alert-success collapsed alert-dismissible" role="alert" id="success">
+            <span id="responseSuccessMessage"></span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="alert alert-danger collapsed alert-dismissible" role="alert" id="danger">
+            <span id="responseFailMessage"></span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
         </div>
 
-        <!-- Profile -->
-        <div class="profile-info col-md-9">
-          <!-- New Article -->
-          <div class="panel">
-            <form>
-              <textarea
-                placeholder="What's your story?"
-                rows="3"
-                class="form-control input-lg p-text-area"
-              ></textarea>
-            </form>
-            <footer class="panel-footer">
-              <button class="btn btn-warning pull-right">Post</button>
-              <ul class="nav nav-pills">
-                <form>
-                  <div>
-                    <textarea
-                      placeholder="Title"
-                      rows="1"
-                      class="input-sm col-xs-3 p-text-area"
-                    ></textarea>
-                  </div>
-                </form>
-              </ul>
-            </footer>
-          </div>
-
-          <!-- Personal Info-->
-          <div class="panel">
-            <div class="bio-graph-heading" id="pData">Προσωπικά Στοιχεία</div>
-            <div class="panel-body bio-graph-info">
-              <div class="row">
-                <div class="bio-row">
-                  <p><span>Όνομα:</span> <span id="name">Camila</span></p>
-                </div>
-                <div class="bio-row">
-                  <p><span>Επίθετο: </span> <span id="sirname">Smith</span></p>
-                </div>
-                <!--<div class="bio-row">
+        <!-- Personal Info-->
+        <div class="panel">
+          <div class="bio-graph-heading" id="pData">Προσωπικά Στοιχεία</div>
+          <div class="panel-body bio-graph-info">
+            <div class="row">
+              <div class="bio-row">
+                <p><span>Όνομα:</span> <span id="name">Camila</span></p>
+              </div>
+              <div class="bio-row">
+                <p><span>Επίθετο: </span> <span id="sirname">Smith</span></p>
+              </div>
+              <!--<div class="bio-row">
                   <p><span>Χώρα:</span> <span id="country"> Unknown</span></p>
                 </div>-->
-                <div class="bio-row">
-                  <p>
-                    <span>Email: </span
-                    ><span id="email">jsmith@flatlab.com</span>
-                  </p>
-                </div>
+              <div class="bio-row">
+                <p>
+                  <span>Email: </span><span id="email">jsmith@flatlab.com</span>
+                </p>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Previous Articles-->
-          <div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="panel">
-                  <div class="panel-body">
-                    <div class="bio-chart">
-                      <div style="display: inline; width: 100px; height: 100px">
-                        <canvas width="100" height="100px"></canvas
-                        ><input
-                          class="knob"
-                          data-width="100"
-                          data-height="100"
-                          data-displayprevious="true"
-                          data-thickness=".2"
-                          value="Title"
-                          data-fgcolor="#e06b7d"
-                          data-bgcolor="#e8e8e8"
-                          style="
-                            width: 54px;
-                            height: 33px;
-                            position: absolute;
-                            vertical-align: middle;
-                            margin-top: 33px;
-                            margin-left: -77px;
-                            border: 0px;
-                            font-weight: bold;
-                            font-style: normal;
-                            font-variant: normal;
-                            font-stretch: normal;
-                            font-size: 20px;
-                            line-height: normal;
-                            font-family: Arial;
-                            text-align: center;
-                            color: rgb(224, 107, 125);
-                            padding: 0px;
-                            -webkit-appearance: none;
-                            background: none;
-                          "
-                        />
-                      </div>
-                    </div>
-                    <div class="bio-desk">
-                      <article>
-                        <p>
-                          Article 1 mpla mpla mpla mpla mpla gia na doume poses
-                          seires tha katevei ayto to keimeno
-                        </p>
-                      </article>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="panel">
-                  <div class="panel-body">
-                    <div class="bio-chart">
-                      <div style="display: inline; width: 100px; height: 100px">
-                        <canvas width="100" height="100px"></canvas
-                        ><input
-                          class="knob"
-                          data-width="100"
-                          data-height="100"
-                          data-displayprevious="true"
-                          data-thickness=".2"
-                          value="Title"
-                          data-fgcolor="#4CC5CD"
-                          data-bgcolor="#e8e8e8"
-                          style="
+        <!-- Previous Articles-->
+        <div id="articlesContainer">
+
+
+          <!-- <div class="col-md-6">
+              <div class="panel">
+                <div class="panel-body">
+                  <div class="bio-chart">
+                    <div style="display: inline; width: 100px; height: 100px">
+                      <canvas width="100" height="100px"></canvas><input class="knob" data-width="100" data-height="100"
+                        data-displayprevious="true" data-thickness=".2" value="Title" data-fgcolor="#4CC5CD"
+                        data-bgcolor="#e8e8e8" style="
                             width: 54px;
                             height: 33px;
                             position: absolute;
@@ -185,37 +129,28 @@
                             padding: 0px;
                             -webkit-appearance: none;
                             background: none;
-                          "
-                        />
-                      </div>
+                          " />
                     </div>
-                    <div class="bio-desk">
-                      <article>
-                        <p>
-                          Article 2 row 2 row 3 to enter den pianei, ayto einai
-                          grammeno se 4 seires, alla de mas noiazei
-                        </p>
-                      </article>
-                    </div>
+                  </div>
+                  <div class="bio-desk">
+                    <article>
+                      <p>
+                        Article 2 row 2 row 3 to enter den pianei, ayto einai
+                        grammeno se 4 seires, alla de mas noiazei
+                      </p>
+                    </article>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="panel">
-                  <div class="panel-body">
-                    <div class="bio-chart">
-                      <div style="display: inline; width: 100px; height: 100px">
-                        <canvas width="100" height="100px"></canvas
-                        ><input
-                          class="knob"
-                          data-width="100"
-                          data-height="100"
-                          data-displayprevious="true"
-                          data-thickness=".2"
-                          value="Title"
-                          data-fgcolor="#96be4b"
-                          data-bgcolor="#e8e8e8"
-                          style="
+            </div>
+            <div class="col-md-6">
+              <div class="panel">
+                <div class="panel-body">
+                  <div class="bio-chart">
+                    <div style="display: inline; width: 100px; height: 100px">
+                      <canvas width="100" height="100px"></canvas><input class="knob" data-width="100" data-height="100"
+                        data-displayprevious="true" data-thickness=".2" value="Title" data-fgcolor="#96be4b"
+                        data-bgcolor="#e8e8e8" style="
                             width: 54px;
                             height: 33px;
                             position: absolute;
@@ -235,38 +170,29 @@
                             padding: 0px;
                             -webkit-appearance: none;
                             background: none;
-                          "
-                        />
-                      </div>
+                          " />
                     </div>
-                    <div class="bio-desk">
-                      <article>
-                        <p>
-                          Article 3 mpla mpla mpla mpla mpla row 2 mpla mpla
-                          mpla mpla mpla mpla row 3 mpla mpla mpla mpla mpla
-                          mpla
-                        </p>
-                      </article>
-                    </div>
+                  </div>
+                  <div class="bio-desk">
+                    <article>
+                      <p>
+                        Article 3 mpla mpla mpla mpla mpla row 2 mpla mpla
+                        mpla mpla mpla mpla row 3 mpla mpla mpla mpla mpla
+                        mpla
+                      </p>
+                    </article>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="panel">
-                  <div class="panel-body">
-                    <div class="bio-chart">
-                      <div style="display: inline; width: 100px; height: 100px">
-                        <canvas width="100" height="100px"></canvas
-                        ><input
-                          class="knob"
-                          data-width="100"
-                          data-height="100"
-                          data-displayprevious="true"
-                          data-thickness=".2"
-                          value="Title"
-                          data-fgcolor="#cba4db"
-                          data-bgcolor="#e8e8e8"
-                          style="
+            </div> -->
+          <!-- <div class="col-md-6">
+              <div class="panel">
+                <div class="panel-body">
+                  <div class="bio-chart">
+                    <div style="display: inline; width: 100px; height: 100px">
+                      <canvas width="100" height="100px"></canvas><input class="knob" data-width="100" data-height="100"
+                        data-displayprevious="true" data-thickness=".2" value="Title" data-fgcolor="#cba4db"
+                        data-bgcolor="#e8e8e8" style="
                             width: 54px;
                             height: 33px;
                             position: absolute;
@@ -286,47 +212,173 @@
                             padding: 0px;
                             -webkit-appearance: none;
                             background: none;
-                          "
-                        />
-                      </div>
+                          " />
                     </div>
-                    <div class="bio-desk">
-                      <article>
-                        <p>
-                          Des pou tha exoun mono 4 arthra na grapsoun... an
-                          theloun parapanw as mas plhrwsoun gia premium account,
-                          apo kapou prepei na vgoun kai ta eksoda ths mko. Kai
-                          as valoume kai ligh extra prospatheia na doume ti
-                          ginetai otan to arthro ksefeygei apo ta oria pou exei
-                          to orthogwnio parallhlogrammo.
-                        </p>
-                      </article>
-                    </div>
+                  </div>
+                  <div class="bio-desk">
+                    <article>
+                      <p>
+                        Des pou tha exoun mono 4 arthra na grapsoun... an
+                        theloun parapanw as mas plhrwsoun gia premium account,
+                        apo kapou prepei na vgoun kai ta eksoda ths mko. Kai
+                        as valoume kai ligh extra prospatheia na doume ti
+                        ginetai otan to arthro ksefeygei apo ta oria pou exei
+                        to orthogwnio parallhlogrammo.
+                      </p>
+                    </article>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> -->
+
         </div>
       </div>
     </div>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript"></script>
+  </div>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type="text/javascript"></script>
 
-    <!--kimon-->
-    <script>
-      $("#name").html(getItem("name"));
-      $("#sirname").html(getItem("sirname"));
-      var fullName = getItem("name") + " " + getItem("sirname");
-      $("#fullName").html(fullName);
+  <!--kimon-->
+  <script>
 
-      $("#email").html(getItem("email"));
-      $("#email2").html(getItem("email"));
+    $(document).ready(function () {
+      $("#danger").hide();
+      $("#success").hide();
+      getUsersArticles();
+    });
 
-      function getItem(name) {
-        return localStorage.getItem(name);
+    function getUsersArticles() {
+      var uid = localStorage.getItem("userID");
+      var xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+
+      xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+          if (this.status === 200) {
+            console.log(event);
+            console.log(JSON.parse(this.response));
+            var response = JSON.parse(this.response);
+            var prependContainer = $('<div class="row">');
+
+            response.forEach(function (article) {
+              $(`<div class="col-md-6">
+              <div class="panel">
+                <div class="panel-body">
+                  <div class="bio-chart">
+                    <div style="display: inline; width: 100px; height: 100px">
+                      ${article.title}
+
+                    </div>
+                  </div>
+                  <div class="bio-desk">
+                    <article>
+                      <p>
+                        ${article.text}
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>`).prependTo(prependContainer);
+            });
+
+            $('#articlesContainer').html(prependContainer);
+
+            // var articlesContainer = document.getElementById('articlesContainer');
+            // response.forEach(function (article) {
+            //   articlesContainer.append(
+
+            //   );
+            // });
+          }
+        }
+      });
+
+      xhr.open("GET", `http://127.0.0.1:5000/articles?uid=${uid}`);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.send();
+
+    }
+
+
+    $("#name").text(getItem("username"));
+    $("#sirname").text(getItem("surname"));
+    var fullName = getItem("username") + " " + getItem("surname");
+    $("#fullName").text(fullName);
+
+    $("#email").text(getItem("email"));
+    $("#email2").text(getItem("email"));
+
+    function createArticle() {
+
+
+      if (!(checkField("#input_title") && checkField("#input_text"))) {
+        return;
       }
-    </script>
-  </body>
+
+      // createItem("username", $("#input_username").val());
+      // window.location.href = "./main.html"
+      var uid = localStorage.getItem("userID");
+      var articleTitle = $("#input_title").val();
+      var articleText = $("#input_text").val();
+
+
+      var data = `uid=${uid}&title=${articleTitle}&text=${articleText}`;
+
+      var xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+
+      xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+          if (this.status === 200) {
+            // console.log(event);
+            // console.log(JSON.parse(this.response));
+            var response = JSON.parse(this.response);
+            $('#success').show();
+            $('#responseSuccessMessage').text(response.response);
+
+
+            $("#input_title").val('');
+            $("#input_text").val('');
+            setTimeout(() => {
+              window.location.href = "./userProfile.html";
+            }, 2000);
+
+          } else if (this.status === 400) {
+            // console.log(event);
+            // console.log(JSON.parse(this.response));
+            var response = JSON.parse(this.response);
+            $('#danger').show();
+            $('#responseFailMessage').text(response.response);
+          }
+        }
+      });
+
+      xhr.open("POST", "http://127.0.0.1:5000/newarticle");
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+      xhr.send(data);
+    }
+    function checkField(fld) {
+      var isRequired = $(fld).prop('required');
+      var isValid = $(fld).prop("validity").valid;
+      var isEmpty = $(fld).val() == "";
+      $(fld).removeClass("is-valid").removeClass("is-invalid");
+      if (isValid) {
+        if (!isEmpty)
+          $(fld).addClass("is-valid");
+        return true;
+      } else {
+        $(fld).addClass("is-invalid");
+        return false;
+      }
+    }
+    function getItem(name) {
+      return localStorage.getItem(name);
+    }
+
+  </script>
+</body>
+
 </html>
