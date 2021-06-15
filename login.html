@@ -1,84 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>ΟΠΚΕΑ</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!--webpage icon-->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">ΟΠΚΕΑ</h2>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-5">
+            <h2 class="heading-section">ΟΠΚΕΑ</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+            <div class="wrap d-md-flex">
+              <div
+                class="img"
+                style="background-image: url(images/login_background.jpg)"
+              ></div>
+              <div class="login-wrap p-4 p-md-5">
+                <div class="d-flex">
+                  <div class="w-100">
+                    <h3 class="mb-4 p-3 text-center">Είσοδος Χρήστη</h3>
+                  </div>
+                  <!--                            <div class="w-100">-->
+                  <!--                                <p class="social-media d-flex justify-content-end">-->
+                  <!--                                    <a href="#"-->
+                  <!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
+                  <!--                                            class="fa fa-facebook"></span></a>-->
+                  <!--                                    <a href="#"-->
+                  <!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
+                  <!--                                            class="fa fa-twitter"></span></a>-->
+                  <!--                                </p>-->
+                  <!--                            </div>-->
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-lg-10">
-                    <div class="wrap d-md-flex">
-                        <div class="img" style="background-image: url(images/login_background.jpg);">
-                        </div>
-                        <div class="login-wrap p-4 p-md-5">
-                            <div class="d-flex">
-                                <div class="w-100">
-                                    <h3 class="mb-4 p-3 text-center">Είσοδος Χρήστη</h3>
-                                </div>
-                                <!--                            <div class="w-100">-->
-                                <!--                                <p class="social-media d-flex justify-content-end">-->
-                                <!--                                    <a href="#"-->
-                                <!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
-                                <!--                                            class="fa fa-facebook"></span></a>-->
-                                <!--                                    <a href="#"-->
-                                <!--                                       class="social-icon d-flex align-items-center justify-content-center"><span-->
-                                <!--                                            class="fa fa-twitter"></span></a>-->
-                                <!--                                </p>-->
-                                <!--                            </div>-->
-                            </div>
-                            <form action="#" class="signin-form">
-                                <div class="form-group mb-3">
-                                    <label class="label" for="name">ονομα</label>
-                                    <input id="input_username" type="text" class="form-control" placeholder="Όνομα"
-                                        required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label class="label" for="password">κωδικος</label>
-                                    <input id="input_password" type="password" class="form-control"
-                                        placeholder="Κωδικός" required>
-                                </div>
-                                <div class="form-group">
-                                    <button type="reset" class="form-control btn btn-primary rounded submit px-3"
-                                        onclick="signIn()">Είσοδος
-                                    </button>
-                                </div>
-                                <div class="form-group">
-                                    <div class="alert alert-success collapsed alert-dismissible" role="alert"
-                                        id="success">
-                                        <span id="responseSuccessMessage"></span>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="alert alert-danger collapsed alert-dismissible" role="alert"
-                                        id="danger">
-                                        <span id="responseFailMessage"></span>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- <div class="form-group d-md-flex">
+                <form action="#" class="signin-form">
+                  <div class="form-group mb-3">
+                    <label class="label" for="name">email</label>
+                    <input
+                      id="input_username"
+                      type="text"
+                      class="form-control"
+                      placeholder="Όνομα"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-3">
+                    <label class="label" for="password">κωδικος</label>
+                    <input
+                      id="input_password"
+                      type="password"
+                      class="form-control"
+                      placeholder="Κωδικός"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="reset"
+                      class="form-control btn btn-primary rounded submit px-3"
+                      onclick="signIn()"
+                    >
+                      Είσοδος
+                    </button>
+                  </div>
+                  <div class="form-group">
+                    <div
+                      class="alert alert-success collapsed alert-dismissible"
+                      role="alert"
+                      id="success"
+                    >
+                      <span id="responseSuccessMessage"></span>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div
+                      class="alert alert-danger collapsed alert-dismissible"
+                      role="alert"
+                      id="danger"
+                    >
+                      <span id="responseFailMessage"></span>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- <div class="form-group d-md-flex">
                                     <div class="w-50 text-left">
                                         <label class="checkbox-wrap checkbox-primary mb-0">Αποθήκευση κωδικού
                                             <input type="checkbox" checked>
@@ -89,107 +128,99 @@
                                         <a href="#">Ξέχασα τον κωδικό</a>
                                     </div>
                                 </div> -->
-                            </form>
-                            <p class="text-center">Δεν είστε μέλος; <a href="signUp.html">Εγγραφή</a></p>
-                        </div>
-                    </div>
-                </div>
+                </form>
+                <p class="text-center">
+                  Δεν είστε μέλος; <a href="signUp.html">Εγγραφή</a>
+                </p>
+              </div>
             </div>
+          </div>
         </div>
-
-
-
+      </div>
     </section>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 
-
     <script>
+      $(document).ready(function () {
+        $("#danger").hide();
+        $("#success").hide();
+      });
+      function signIn() {
+        if (!(checkField("#input_username") && checkField("#input_password"))) {
+          return;
+        }
 
-        $(document).ready(function () {
+        // createItem("username", $("#input_username").val());
+        // window.location.href = "./main.html"
 
-            $("#danger").hide();
-            $("#success").hide();
+        var username = $("#input_username").val();
+        var password = $("#input_password").val();
+        var data = `email=${username}&password=${password}`;
 
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
 
+        xhr.addEventListener("readystatechange", function (event) {
+          if (this.readyState === 4) {
+            if (this.status === 200) {
+              // console.log(event);
+              // console.log(JSON.parse(this.response));
+              var response = JSON.parse(this.response);
+              $("#success").show();
+              $("#responseSuccessMessage").html(response.response);
+              storeUser(
+                response.userID,
+                response.username,
+                response.surname,
+                response.email
+              );
+              window.location.href = "./main.html";
+            } else if (this.status === 400) {
+              // console.log(event);
+              // console.log(JSON.parse(this.response));
+              var response = JSON.parse(this.response);
+              $("#danger").show();
+              $("#responseFailMessage").html(response.response);
+            }
+          }
         });
-        function signIn() {
 
-            if (!(checkField("#input_username") && checkField("#input_password"))) {
-                return;
-            }
+        xhr.open("POST", "http://127.0.0.1:5000/signin");
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
 
-            // createItem("username", $("#input_username").val());
-            // window.location.href = "./main.html"
+        xhr.send(data);
+      }
 
-            var username = $("#input_username").val();
-            var password = $("#input_password").val();
-            var data = `email=${username}&password=${password}`;
-
-            var xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
-
-            xhr.addEventListener("readystatechange", function (event) {
-                if (this.readyState === 4) {
-                    if (this.status === 200) {
-                        // console.log(event);
-                        // console.log(JSON.parse(this.response));
-                        var response = JSON.parse(this.response);
-                        $('#success').show();
-                        $('#responseSuccessMessage').html(response.response);
-                        storeUser(response.userID, response.username, response.surname, response.email);
-                        window.location.href = "./userProfile.html";
-                    } else if (this.status === 400) {
-                        // console.log(event);
-                        // console.log(JSON.parse(this.response));
-                        var response = JSON.parse(this.response);
-                        $('#danger').show();
-                        $('#responseFailMessage').html(response.response);
-                    }
-                }
-            });
-
-            xhr.open("POST", "http://127.0.0.1:5000/signin");
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-            xhr.send(data);
+      function checkField(fld) {
+        var isRequired = $(fld).prop("required");
+        var isValid = $(fld).prop("validity").valid;
+        var isEmpty = $(fld).val() == "";
+        $(fld).removeClass("is-valid").removeClass("is-invalid");
+        if (isValid) {
+          if (!isEmpty) $(fld).addClass("is-valid");
+          return true;
+        } else {
+          $(fld).addClass("is-invalid");
+          return false;
         }
+      }
 
-        function checkField(fld) {
-            var isRequired = $(fld).prop('required');
-            var isValid = $(fld).prop("validity").valid;
-            var isEmpty = $(fld).val() == "";
-            $(fld).removeClass("is-valid").removeClass("is-invalid");
-            if (isValid) {
-                if (!isEmpty)
-                    $(fld).addClass("is-valid");
-                return true;
-            } else {
-                $(fld).addClass("is-invalid");
-                return false;
-            }
-        }
+      // function createItem(name, value) {
+      //     localStorage.setItem(name, value);
+      // }
 
-        // function createItem(name, value) {
-        //     localStorage.setItem(name, value);
-        // }
-
-        function storeUser(userID, username, surname, email) {
-            localStorage.setItem("userID", userID);
-            localStorage.setItem("username", username);
-            localStorage.setItem("surname", surname);
-            localStorage.setItem("email", email);
-        }
-
+      function storeUser(userID, username, surname, email) {
+        localStorage.setItem("userID", userID);
+        localStorage.setItem("username", username);
+        localStorage.setItem("surname", surname);
+        localStorage.setItem("email", email);
+      }
     </script>
-
-
-
-
-
-
-</body>
-
+  </body>
 </html>

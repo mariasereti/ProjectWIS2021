@@ -1,108 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
 
-<head>
-  <meta charset="utf-8" />
-  <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-  <!--  All snippets are MIT license http://bootdey.com/license -->
-  <title>user profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/newsFeed.css" rel="stylesheet" />
-  <link href="css/profile.css" rel="stylesheet" />
-</head>
+    <!--webpage icon-->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
-<body>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <title>user profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/newsFeed.css" rel="stylesheet" />
+    <link href="css/profile.css" rel="stylesheet" />
+  </head>
 
-  <div class="container bootstrap snippets bootdey">
-    <div class="row">
-      <!-- Avatar Navigation-->
-      <div class="profile-nav col-md-3">
-        <div class="panel">
-          <div class="user-heading round">
-            <a href="#">
-              <img src="images/avatar.png" alt="" />
-            </a>
-            <h1 id="fullName">Name Surname</h1>
-            <p id="email2">yourEmail@mailService.com</p>
-          </div>
+  <body>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
 
-          <ul class="nav nav-pills nav-stacked">
-            <li>
-              <a href="main.html"> <i class="fa fa-home"></i> Αρχική </a>
-            </li>
-            <li class="active">
-              <a href="#pData"> <i class="fa fa-user"></i> Προφίλ</a>
-            </li>
-            <li>
-              <a href="#"> <i class="fa fa-edit"></i> Επεξεργασία Προφίλ</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="container bootstrap snippets bootdey">
+      <div class="row">
+        <!-- Avatar Navigation-->
+        <div class="profile-nav col-md-3">
+          <div class="panel">
+            <div class="user-heading round">
+              <a href="#">
+                <img src="images/avatar.png" alt="" />
+              </a>
+              <h1 id="fullName">Name Surname</h1>
+              <p id="email2">yourEmail@mailService.com</p>
+            </div>
 
-      <!-- Profile -->
-      <div class="profile-info col-md-9">
-        <!-- New Article -->
-        <div class="panel">
-          <!-- <form> -->
-          <textarea id="input_text" placeholder="What's your story?" rows="3"
-            class="form-control input-lg p-text-area"></textarea>
-          <!-- </form> -->
-          <footer class="panel-footer">
-            <button class="btn btn-warning pull-right" onClick="createArticle()">Post</button>
-            <ul class="nav nav-pills">
-              <!-- <form> -->
-              <div>
-                <textarea id="input_title" placeholder="Title" rows="1"
-                  class="input-sm col-xs-3 p-text-area"></textarea>
-              </div>
-              <!-- </form> -->
+            <ul class="nav nav-pills nav-stacked">
+              <li>
+                <a href="main.html"> <i class="fa fa-home"></i> Αρχική </a>
+              </li>
+              <li class="active">
+                <a href="#pData"> <i class="fa fa-user"></i> Προφίλ</a>
+              </li>
+              <li>
+                <a href="editProfile.html">
+                  <i class="fa fa-edit"></i> Επεξεργασία Προφίλ</a
+                >
+              </li>
             </ul>
-          </footer>
-          <div class="alert alert-success collapsed alert-dismissible" role="alert" id="success">
-            <span id="responseSuccessMessage"></span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="alert alert-danger collapsed alert-dismissible" role="alert" id="danger">
-            <span id="responseFailMessage"></span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
         </div>
 
-        <!-- Personal Info-->
-        <div class="panel">
-          <div class="bio-graph-heading" id="pData">Προσωπικά Στοιχεία</div>
-          <div class="panel-body bio-graph-info">
-            <div class="row">
-              <div class="bio-row">
-                <p><span>Όνομα:</span> <span id="name">Camila</span></p>
-              </div>
-              <div class="bio-row">
-                <p><span>Επίθετο: </span> <span id="sirname">Smith</span></p>
-              </div>
-              <!--<div class="bio-row">
+        <!-- Profile -->
+        <div class="profile-info col-md-9">
+          <!-- New Article -->
+          <div class="panel">
+            <!-- <form> -->
+            <textarea
+              id="input_text"
+              placeholder="What's your story?"
+              rows="3"
+              class="form-control input-lg p-text-area"
+            ></textarea>
+            <!-- </form> -->
+            <footer class="panel-footer">
+              <button
+                class="btn btn-warning pull-right"
+                onClick="createArticle()"
+              >
+                Post
+              </button>
+              <ul class="nav nav-pills">
+                <!-- <form> -->
+                <div>
+                  <textarea
+                    id="input_title"
+                    placeholder="Title"
+                    rows="1"
+                    class="input-sm col-xs-3 p-text-area"
+                  ></textarea>
+                </div>
+                <!-- </form> -->
+              </ul>
+            </footer>
+
+            <!-- Warnings-->
+            <div
+              class="alert alert-success collapsed alert-dismissible"
+              role="alert"
+              id="success"
+            >
+              <span id="responseSuccessMessage"></span>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div
+              class="alert alert-danger collapsed alert-dismissible"
+              role="alert"
+              id="danger"
+            >
+              <span id="responseFailMessage"></span>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Personal Info-->
+          <div class="panel">
+            <div class="bio-graph-heading" id="pData">Προσωπικά Στοιχεία</div>
+            <div class="panel-body bio-graph-info">
+              <div class="row">
+                <div class="bio-row">
+                  <p><span>Όνομα:</span> <span id="name">Camila</span></p>
+                </div>
+                <div class="bio-row">
+                  <p><span>Επίθετο: </span> <span id="sirname">Smith</span></p>
+                </div>
+                <!--<div class="bio-row">
                   <p><span>Χώρα:</span> <span id="country"> Unknown</span></p>
                 </div>-->
-              <div class="bio-row">
-                <p>
-                  <span>Email: </span><span id="email">jsmith@flatlab.com</span>
-                </p>
+                <div class="bio-row">
+                  <p>
+                    <span>Email: </span
+                    ><span id="email">jsmith@flatlab.com</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Previous Articles-->
-        <div id="articlesContainer">
-
-
-          <!-- <div class="col-md-6">
+          <!-- Previous Articles-->
+          <div id="articlesContainer">
+            <!-- <div class="col-md-6">
               <div class="panel">
                 <div class="panel-body">
                   <div class="bio-chart">
@@ -185,7 +228,7 @@
                 </div>
               </div>
             </div> -->
-          <!-- <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <div class="panel">
                 <div class="panel-body">
                   <div class="bio-chart">
@@ -230,43 +273,41 @@
                 </div>
               </div>
             </div> -->
-
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
 
-  <!--kimon-->
-  <script>
+    <!--kimon-->
+    <script>
+      $(document).ready(function () {
+        $("#danger").hide();
+        $("#success").hide();
+        getUsersArticles();
+      });
 
-    $(document).ready(function () {
-      $("#danger").hide();
-      $("#success").hide();
-      getUsersArticles();
-    });
+      function getUsersArticles() {
+        var uid = localStorage.getItem("userID");
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
 
-    function getUsersArticles() {
-      var uid = localStorage.getItem("userID");
-      var xhr = new XMLHttpRequest();
-      xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            if (this.status === 200) {
+              console.log(event);
+              console.log(JSON.parse(this.response));
+              var response = JSON.parse(this.response);
+              var prependContainer = $('<div class="row">');
 
-      xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-          if (this.status === 200) {
-            console.log(event);
-            console.log(JSON.parse(this.response));
-            var response = JSON.parse(this.response);
-            var prependContainer = $('<div class="row">');
-
-            response.forEach(function (article) {
-              $(`<div class="col-md-6">
+              response.forEach(function (article) {
+                $(`<div class="col-md-12">
               <div class="panel">
                 <div class="panel-body">
                   <div class="bio-chart">
-                    <div style="display: inline; width: 100px; height: 100px">
+                    <div class="articleTitle" style="display: inline; width: 100px; height: 100px;">
                       ${article.title}
 
                     </div>
@@ -281,104 +322,101 @@
                 </div>
               </div>
             </div>`).prependTo(prependContainer);
-            });
+              });
 
-            $('#articlesContainer').html(prependContainer);
+              $("#articlesContainer").html(prependContainer);
 
-            // var articlesContainer = document.getElementById('articlesContainer');
-            // response.forEach(function (article) {
-            //   articlesContainer.append(
+              // var articlesContainer = document.getElementById('articlesContainer');
+              // response.forEach(function (article) {
+              //   articlesContainer.append(
 
-            //   );
-            // });
+              //   );
+              // });
+            }
           }
-        }
-      });
+        });
 
-      xhr.open("GET", `http://127.0.0.1:5000/articles?uid=${uid}`);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.send();
-
-    }
-
-
-    $("#name").text(getItem("username"));
-    $("#sirname").text(getItem("surname"));
-    var fullName = getItem("username") + " " + getItem("surname");
-    $("#fullName").text(fullName);
-
-    $("#email").text(getItem("email"));
-    $("#email2").text(getItem("email"));
-
-    function createArticle() {
-
-
-      if (!(checkField("#input_title") && checkField("#input_text"))) {
-        return;
+        xhr.open("GET", `http://127.0.0.1:5000/articles?uid=${uid}`);
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        xhr.send();
       }
 
-      // createItem("username", $("#input_username").val());
-      // window.location.href = "./main.html"
-      var uid = localStorage.getItem("userID");
-      var articleTitle = $("#input_title").val();
-      var articleText = $("#input_text").val();
+      $("#name").text(getItem("username"));
+      $("#sirname").text(getItem("surname"));
+      var fullName = getItem("username") + " " + getItem("surname");
+      $("#fullName").text(fullName);
 
+      $("#email").text(getItem("email"));
+      $("#email2").text(getItem("email"));
 
-      var data = `uid=${uid}&title=${articleTitle}&text=${articleText}`;
-
-      var xhr = new XMLHttpRequest();
-      xhr.withCredentials = true;
-
-      xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-          if (this.status === 200) {
-            // console.log(event);
-            // console.log(JSON.parse(this.response));
-            var response = JSON.parse(this.response);
-            $('#success').show();
-            $('#responseSuccessMessage').text(response.response);
-
-
-            $("#input_title").val('');
-            $("#input_text").val('');
-            setTimeout(() => {
-              window.location.href = "./userProfile.html";
-            }, 2000);
-
-          } else if (this.status === 400) {
-            // console.log(event);
-            // console.log(JSON.parse(this.response));
-            var response = JSON.parse(this.response);
-            $('#danger').show();
-            $('#responseFailMessage').text(response.response);
-          }
+      function createArticle() {
+        if ($("#input_title").val() === "" && $("#input_text").val() === "") {
+          console.log("empty fields");
+          return;
         }
-      });
 
-      xhr.open("POST", "http://127.0.0.1:5000/newarticle");
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        // createItem("username", $("#input_username").val());
+        // window.location.href = "./main.html"
+        var uid = localStorage.getItem("userID");
+        var articleTitle = $("#input_title").val();
+        var articleText = $("#input_text").val();
 
-      xhr.send(data);
-    }
-    function checkField(fld) {
-      var isRequired = $(fld).prop('required');
-      var isValid = $(fld).prop("validity").valid;
-      var isEmpty = $(fld).val() == "";
-      $(fld).removeClass("is-valid").removeClass("is-invalid");
-      if (isValid) {
-        if (!isEmpty)
-          $(fld).addClass("is-valid");
-        return true;
-      } else {
-        $(fld).addClass("is-invalid");
-        return false;
+        var data = `uid=${uid}&title=${articleTitle}&text=${articleText}`;
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            if (this.status === 200) {
+              // console.log(event);
+              // console.log(JSON.parse(this.response));
+              var response = JSON.parse(this.response);
+              $("#success").show();
+              $("#responseSuccessMessage").text(response.response);
+
+              $("#input_title").val("");
+              $("#input_text").val("");
+              setTimeout(() => {
+                window.location.href = "./userProfile.html";
+              }, 2000);
+            } else if (this.status === 400) {
+              // console.log(event);
+              // console.log(JSON.parse(this.response));
+              var response = JSON.parse(this.response);
+              $("#danger").show();
+              $("#responseFailMessage").text(response.response);
+            }
+          }
+        });
+
+        xhr.open("POST", "http://127.0.0.1:5000/newarticle");
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+
+        xhr.send(data);
       }
-    }
-    function getItem(name) {
-      return localStorage.getItem(name);
-    }
-
-  </script>
-</body>
-
+      function checkField(fld) {
+        var isRequired = $(fld).prop("required");
+        var isValid = $(fld).prop("validity").valid;
+        var isEmpty = $(fld).val() == "";
+        $(fld).removeClass("is-valid").removeClass("is-invalid");
+        if (isValid) {
+          if (!isEmpty) $(fld).addClass("is-valid");
+          return true;
+        } else {
+          $(fld).addClass("is-invalid");
+          return false;
+        }
+      }
+      function getItem(name) {
+        return localStorage.getItem(name);
+      }
+    </script>
+  </body>
 </html>
