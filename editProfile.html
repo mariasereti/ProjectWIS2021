@@ -89,12 +89,13 @@
                       placeholder="Νέο Επίθετο"
                     /><br />
                     <input
+                      id="newEmail"
                       class="editUser"
                       type="email"
                       placeholder="Νέο email"
                     /><br />
                     <p>
-                      <button class="pi" onclick="editUser();">Aλλαγή</button>
+                      <button class="pi" onclick="updateuser();">Aλλαγή</button>
                     </p>
                     <br />
                   </form>
@@ -222,35 +223,40 @@
       function updateuser() {
         var surname = $("#newSurname").val();
         var firstname = $("#newName").val();
-        var mail = $("#newEmail").val();
-        var data = `surname=${surname}&name=${firstname}&email=${mail}`;
+        var email = $("#newEmail").val();
+        var uid = localStorage.getItem("userID");
+        var data = `userID=${uid}&surname=${surname}&name=${firstname}&email=${email}`;
 
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange", function (event) {
-          if (this.readyState === 4) {
-            if (this.status === 200) {
-              // console.log(event);
-              // console.log(JSON.parse(this.response));
-              var response = JSON.parse(this.response);
-              $("#success").show();
-              $("#responseSuccessMessage").html(response.response);
-              storeUser(
-                response.userID,
-                response.username,
-                response.surname,
-                response.email
-              );
-              //window.location.href = "./userProfile.html";
-            } else if (this.status === 400) {
-              // console.log(event);
-              // console.log(JSON.parse(this.response));
-              var response = JSON.parse(this.response);
-              $("#danger").show();
-              $("#responseFailMessage").html(response.response);
-            }
+          console.log("updateuser responce status: " + this.status);
+          //if (this.readyState === 4) {
+          if (this.status >= 200 && this.status < 400) {
+            // console.log(event);
+            // console.log(JSON.parse(this.response));
+            var response = JSON.parse(this.response);
+            $("#success").show();
+            $("#responseSuccessMessage").html(response.response);
+            storeUser(
+              response.userID,
+              response.username,
+              response.surname,
+              response.email
+            );
+            //window.location.href = "./userProfile.html";
+          } else if (this.status === 400) {
+            // console.log(event);
+            // console.log(JSON.parse(this.response));
+            var response = JSON.parse(this.response);
+            $("#danger").show();
+            $("#responseFailMessage").html(response.response);
+          } else {
+            var response = JSON.parse(this.response);
+            console.log("unknown error. Code number: " + response);
           }
+          // }
         });
 
         xhr.open("POST", "http://127.0.0.1:5000/updateuser");
