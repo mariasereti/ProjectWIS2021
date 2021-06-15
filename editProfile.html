@@ -225,7 +225,7 @@
         var firstname = $("#newName").val();
         var email = $("#newEmail").val();
         var uid = localStorage.getItem("userID");
-        var data = `userID=${uid}&surname=${surname}&name=${firstname}&email=${email}`;
+        var data = `uid=${uid}&surname=${surname}&name=${firstname}&email=${email}`;
 
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
